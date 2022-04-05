@@ -146,8 +146,8 @@ public class PlayerMovement : MonoBehaviour
         // Movement in air
         if (!grounded)
         {
-            multiplier = 0.5f;
-            multiplierV = 0.5f;
+            multiplier = 0.75f;
+            multiplierV = 0.75f;
         }
 
         // Movement while sliding
