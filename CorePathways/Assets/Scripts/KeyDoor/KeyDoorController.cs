@@ -2,17 +2,67 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyDoorControler : MonoBehaviour
+namespace KeySystem
 {
-    // Start is called before the first frame update
-    void Start()
+    public class KeyDoorController : MonoBehaviour
     {
-        
-    }
+        private Animator doorAnim;
+        private bool doorOpen = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Header("Animation Names")]
+        [SerializeField] private string openAnimationName = "DoorOpen";
+        [SerializeField] private string closeAnimationName = "DoorClose";
+
+        [SerializeField] private int timeToShowUI = 1;
+        [SerializeField] private GameObject showDoorLockedUI = null;
+
+        [SerializeField] private KeyInventory _KeyInventory = null;
+
+        [SerializeField] private int waitTimer = 1;
+        [SerializeField] private bool pauseInteraction = false;
+
+        private void Awake()
+        {
+            doorAnim = gameObject.GetComponent<Animator>();
+        }
+
+        private IEnumerator PauseDoorInteraction()
+        {
+            pauseInteraction = true;
+            yield return new WaitForSeconds(waitTimer);
+            pauseInteraction = false;
+        }
+
+        public void PlayAnimation()
+        {
+            if(_KeyInventory.hasKey)
+            {
+                if(!doorOpen && !pauseInteraction)
+                {
+                    doorAnim.Play(openAnimationName, 0, 0.0f);
+                    doorOpen = true;
+                    StartCoroutine(PauseDoorInteraction());
+                }
+
+                else if(doorOpen && !pauseInteraction)
+                {
+                    doorAnim.Play(closeAnimationName, 0, 0.0f);
+                    doorOpen = false;
+                    StartCoroutine(PauseDoorInteraction());
+                }
+            }
+
+            else
+            {
+                StartCoroutine(showDoorLocked());
+            }
+        }
+
+        IEnumerator ShowDoorLocked()
+        {
+            showDoorLockedUI.setActive(true);
+            yield return new WaitForSeconds(timeToShowUI);
+            showDoorLockedUI.setActive(false);
+        }
     }
 }

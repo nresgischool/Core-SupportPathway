@@ -11,6 +11,28 @@ namespace KeySystem
 
         private KeyInventory _keyInventory = null;
 
-        private KeyDoorController doorObject; 
+        private KeyDoorController doorObject;
+
+        private void Start()
+        {
+            if (door)
+            {
+                doorObject = GetComponent<KeyDoorController>();
+            }
+        }
+
+        public void ObjectInteraction()
+        {
+            if(door)
+            {
+                doorObject.PlayAnimation();
+            }
+
+            else if(key)
+            {
+                _keyInventory.hasKey = true;
+                gameObject.SetActive(false);
+            }
+        }
     }
 }
