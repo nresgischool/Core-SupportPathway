@@ -6,10 +6,10 @@ namespace KeySystem
 {
     public class KeyItemController : MonoBehaviour
     {
-        private bool door = false;
-        private bool key = false;
+        [SerializeField] private bool door = false;
+        [SerializeField] private bool key = false;
 
-        private KeyInventory _keyInventory = null;
+        [SerializeField] private KeyInventory _keyInventory = null;
 
         private KeyDoorController doorObject;
 

@@ -12,13 +12,13 @@ namespace KeySystem
         [SerializeField] private string excluseLayerName = null;
 
         private KeyItemController raycastedObject;
-        private KeyCode openDoorKey = KeyCode.Mouse0;
+        [SerializeField] private KeyCode openDoorKey = KeyCode.Mouse0;
 
-        private Image crosshair = null;
+        [SerializeField] private Image crosshair = null;
         private bool isCrosshairActive;
         private bool doOnce;
 
-        private string interactableTag = "KeyDoor";
+        private string interactableTag = "InteractiveObject";
 
         private void Update()
         {
@@ -57,9 +57,17 @@ namespace KeySystem
             }
         }
 
-        void CrosshairChange()
+        void CrosshairChange(bool on)
         {
-
+            if(on && !doOnce)
+            {
+                crosshair.color = Color.red;
+            }
+            else
+            {
+                crosshair.color = Color.white;
+                isCrosshairActive = false;
+            }
         }
     }
 }

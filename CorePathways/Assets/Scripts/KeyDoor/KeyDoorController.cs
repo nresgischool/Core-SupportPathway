@@ -37,32 +37,36 @@ namespace KeySystem
         {
             if(_KeyInventory.hasKey)
             {
-                if(!doorOpen && !pauseInteraction)
-                {
-                    doorAnim.Play(openAnimationName, 0, 0.0f);
-                    doorOpen = true;
-                    StartCoroutine(PauseDoorInteraction());
-                }
-
-                else if(doorOpen && !pauseInteraction)
-                {
-                    doorAnim.Play(closeAnimationName, 0, 0.0f);
-                    doorOpen = false;
-                    StartCoroutine(PauseDoorInteraction());
-                }
+                openDoor();
             }
 
             else
             {
-                StartCoroutine(showDoorLocked());
+                StartCoroutine(ShowDoorLocked());
+            }
+        }
+
+        void openDoor()
+        {
+            if(!doorOpen && !pauseInteraction)
+            {
+                doorAnim.Play(openAnimationName, 0, 0.0f);
+                doorOpen = true;
+                StartCoroutine(PauseDoorInteraction());
+            }
+            else if(doorOpen && !pauseInteraction)
+            {
+                doorAnim.Play(closeAnimationName, 0, 0.0f);
+                doorOpen = false;
+                StartCoroutine(PauseDoorInteraction());
             }
         }
 
         IEnumerator ShowDoorLocked()
         {
-            showDoorLockedUI.setActive(true);
+            showDoorLockedUI.SetActive(true);
             yield return new WaitForSeconds(timeToShowUI);
-            showDoorLockedUI.setActive(false);
+            showDoorLockedUI.SetActive(false);
         }
     }
 }
