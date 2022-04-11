@@ -1,0 +1,11 @@
+Model Information:
+* title:	Two Islands floating in Space
+* source:	https://sketchfab.com/3d-models/two-islands-floating-in-space-89f7c4d48d7d4e068510b6762d7d0949
+* author:	kaimys (https://sketchfab.com/kaimys)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Two Islands floating in Space" (https://sketchfab.com/3d-models/two-islands-floating-in-space-89f7c4d48d7d4e068510b6762d7d0949) by kaimys (https://sketchfab.com/kaimys) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

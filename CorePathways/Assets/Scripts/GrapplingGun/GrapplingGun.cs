@@ -8,7 +8,7 @@ public class GrapplingGun : MonoBehaviour
     public Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
-    private float maxDistance = 100f;
+    public float maxDistance = 100f;
     //Allows player to adjust how far they want to be from the grapple point
     public float distanceFromMax = 0.8f;
     public float distanceFromMin = 0.25f;

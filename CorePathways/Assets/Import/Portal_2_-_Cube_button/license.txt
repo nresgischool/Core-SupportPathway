@@ -1,0 +1,11 @@
+Model Information:
+* title:	Portal 2 - Cube button
+* source:	https://sketchfab.com/3d-models/portal-2-cube-button-3df6322a78d54e40a09e15b0fcad6bd8
+* author:	Redwthr (https://sketchfab.com/Redwthr)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Portal 2 - Cube button" (https://sketchfab.com/3d-models/portal-2-cube-button-3df6322a78d54e40a09e15b0fcad6bd8) by Redwthr (https://sketchfab.com/Redwthr) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GrappleGunLevel.unity
+    guid: d8bd3034756c4614b8e8eb702632eddc
+  - enabled: 1
+    path: Assets/Scenes/MoveMent.unity
+    guid: a15ed05f8a7b1ac4894d747bda8edf71
   m_configObjects: {}

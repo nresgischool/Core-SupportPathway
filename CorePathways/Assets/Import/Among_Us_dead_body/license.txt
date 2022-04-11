@@ -1,0 +1,11 @@
+Model Information:
+* title:	Among Us dead body
+* source:	https://sketchfab.com/3d-models/among-us-dead-body-599ddf75fb1648ddbf434a0093a2eb22
+* author:	Cameron D. (https://sketchfab.com/Cameron-Dalonneau)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Among Us dead body" (https://sketchfab.com/3d-models/among-us-dead-body-599ddf75fb1648ddbf434a0093a2eb22) by Cameron D. (https://sketchfab.com/Cameron-Dalonneau) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
