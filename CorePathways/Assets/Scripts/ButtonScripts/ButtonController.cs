@@ -16,14 +16,8 @@ public class ButtonController : MonoBehaviour
     {
         if (!buttonDown)
         {
-            buttonAnim.Play("ButtonDown", 0, 0.0f);
+            buttonAnim.Play("Button", 0, 0.0f);
             buttonDown = true;
-            Debug.Log("Button Down");
-        }
-        else
-        {
-            buttonAnim.Play("ButtonUp", 0, 0.0f);
-            buttonDown = false;
             Debug.Log("Button Down");
         }
     }

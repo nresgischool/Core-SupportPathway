@@ -9,7 +9,7 @@ public class ButtonRaycast : MonoBehaviour
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayerName = null;
 
-    private MyDoorController raycastedObj;
+    private ButtonController raycastedObj;
 
     public KeyCode openDoorKey = KeyCode.Mouse0;
 
@@ -33,7 +33,7 @@ public class ButtonRaycast : MonoBehaviour
             {
                 if (!doOnce)
                 {
-                    raycastedObj = hit.collider.gameObject.GetComponent<MyDoorController>();
+                    raycastedObj = hit.collider.gameObject.GetComponent<ButtonController>();
                     CrosshairChange(true);
                 }
 
