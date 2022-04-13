@@ -5,8 +5,12 @@ using UnityEngine;
 public class ButtonController : MonoBehaviour
 {
     private Animator buttonAnim;
-    [SerializeField] private bool buttonDown = false;
+    [SerializeField] private bool redButton = false;
+    [SerializeField] private bool blueButton = false;
 
+    [SerializeField] private bool blackButton = false;
+    [SerializeField] private bool purpleButton = false;
+    [SerializeField] private bool orangeButton = false;
     void Awake()
     {
         buttonAnim = gameObject.GetComponent<Animator>();
@@ -14,11 +18,17 @@ public class ButtonController : MonoBehaviour
 
     public void PlayAnimation()
     {
-        if (!buttonDown)
+        if (redButton)
         {
             buttonAnim.Play("Button", 0, 0.0f);
-            buttonDown = true;
+            redButton = true;
             Debug.Log("Button Down");
+            if(blueButton)
+            {
+                buttonAnim.Play("Button", 0, 0.0f);
+                blueButton = true;
+                Debug.Log("Blue Button");
+            }
         }
     }
 }
