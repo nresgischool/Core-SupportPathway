@@ -10,7 +10,7 @@ public class ButtonController : MonoBehaviour
 
     [SerializeField] private bool blackButton = false;
     [SerializeField] private bool purpleButton = false;
-    [SerializeField] private bool orangeButton = false;
+    [SerializeField] private bool greenButton = false;
     void Awake()
     {
         buttonAnim = gameObject.GetComponent<Animator>();
