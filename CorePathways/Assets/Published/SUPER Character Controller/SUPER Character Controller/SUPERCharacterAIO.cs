@@ -1333,11 +1333,16 @@ public class SUPERCharacterAIO : MonoBehaviour{
             }break;
         }
     }
-    
-    #endregion
 
-    #region Animator Update
-    void UpdateAnimationTriggers(){
+    public float getHealth()
+    {
+        return currentSurvivalStats.Health;
+    }
+
+        #endregion
+
+        #region Animator Update
+        void UpdateAnimationTriggers(){
         switch (cameraPerspective){
             case PerspectiveModes._1stPerson:{
                 if(_1stPersonCharacterAnimator){
