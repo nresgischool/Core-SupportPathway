@@ -6,6 +6,7 @@ TagManager:
   tags:
   - InteractiveObject
   - comCube
+  - Projectile
   layers:
   - Default
   - TransparentFX
