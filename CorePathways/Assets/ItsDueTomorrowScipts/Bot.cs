@@ -11,6 +11,8 @@ public class Bot : MonoBehaviour
     //Drive ds;
     SUPERCharacterAIO sC;
 
+    public float health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -247,6 +249,20 @@ public class Bot : MonoBehaviour
             {
                 Pursue();
             }           //otherwise pursue the target
+        }
+
+        if(health < 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Projectile")
+        {
+            health -= 25;
+            Debug.Log("hit");
         }
     }
 }
