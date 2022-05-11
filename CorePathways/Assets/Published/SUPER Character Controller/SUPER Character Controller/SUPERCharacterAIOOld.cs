@@ -559,7 +559,7 @@ public class SUPERCharacterAIO : MonoBehaviour{
 
         #region Animation
         UpdateAnimationTriggers();
-            #endregion
+        #endregion
     }
     void FixedUpdate() {
 
@@ -1114,12 +1114,6 @@ public class SUPERCharacterAIO : MonoBehaviour{
             }
         }
     }
-
-    public float GetCurrentSpeed()
-    {
-            return currentGroundSpeed; 
-    }
-
     IEnumerator ApplyStance(float smoothSpeed, Stances newStance){
         currentStance = newStance;
         while(!Mathf.Approximately(capsule.height,currentStance==Stances.Standing? standingHeight : crouchingHeight)){
@@ -1339,16 +1333,16 @@ public class SUPERCharacterAIO : MonoBehaviour{
             }break;
         }
     }
-    
-    public float getHealth()
-        {
-            return currentSurvivalStats.Health;
-        }
-    
-    #endregion
 
-    #region Animator Update
-    void UpdateAnimationTriggers(){
+    public float getHealth()
+    {
+        return currentSurvivalStats.Health;
+    }
+
+        #endregion
+
+        #region Animator Update
+        void UpdateAnimationTriggers(){
         switch (cameraPerspective){
             case PerspectiveModes._1stPerson:{
                 if(_1stPersonCharacterAnimator){

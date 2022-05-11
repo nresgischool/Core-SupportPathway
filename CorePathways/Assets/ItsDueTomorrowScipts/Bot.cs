@@ -8,13 +8,15 @@ public class Bot : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject target;
-    Drive ds;
+    //Drive ds;
+    SUPERCharacterAIO sC;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = this.GetComponent<NavMeshAgent>();
-        ds = target.GetComponent<Drive>();
+        //ds = target.GetComponent<Drive>();
+        sC = target.GetComponent<SUPERCharacterAIO>();
     }
 
     //send agent to a location on the nav mesh
@@ -48,14 +50,15 @@ public class Bot : MonoBehaviour
         float toTarget = Vector3.Angle(this.transform.forward, this.transform.TransformVector(targetDir));
 
         //if the agent behind and heading in the same direction or the target has stopped then just seek.
-        if ((toTarget > 90 && relativeHeading < 20) || ds.currentSpeed < 0.01f)
+        //if ((toTarget > 90 && relativeHeading < 20) || ds.currentSpeed < 0.01f)
+        if ((toTarget > 90 && relativeHeading < 20) || sC.GetCurrentSpeed() < 0.1f)
         {
             Seek(target.transform.position);
             return;
         }
 
         //calculate how far to look ahead and add this to the seek location.
-        float lookAhead = targetDir.magnitude / (agent.speed + ds.currentSpeed);
+        float lookAhead = targetDir.magnitude / (agent.speed + sC.GetCurrentSpeed());
         Seek(target.transform.position + target.transform.forward * lookAhead);
     }
 
@@ -64,7 +67,7 @@ public class Bot : MonoBehaviour
     void Evade()
     {
         Vector3 targetDir = target.transform.position - this.transform.position;
-        float lookAhead = targetDir.magnitude / (agent.speed + ds.currentSpeed);
+        float lookAhead = targetDir.magnitude / (agent.speed + sC.GetCurrentSpeed());
 
         //same as pursue but instead of seek we are fleeing
         Flee(target.transform.position + target.transform.forward * lookAhead);
@@ -77,7 +80,7 @@ public class Bot : MonoBehaviour
     {
         float wanderRadius = 10;
         float wanderDistance = 10;
-        float wanderJitter = 1;
+        float wanderJitter = 1f;
 
         //determine a location on a circle 
         wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
@@ -175,9 +178,13 @@ public class Bot : MonoBehaviour
         //perform a raycast to determine if there's anything between the agent and the target
         if (Physics.Raycast(this.transform.position, rayToTarget, out raycastInfo))
         {
-            //ray will hit the target if no other colliders in the way
-            if (raycastInfo.transform.gameObject.tag == "cop")
-                return true;
+            {
+                //ray will hit the target if no other colliders in the way
+                if (raycastInfo.transform.gameObject.tag == "cop")
+                {
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -193,7 +200,9 @@ public class Bot : MonoBehaviour
         //if the target is facing the agent within 60 degrees of straight on
         //lets assume the target can see the agent
         if (lookingAngle < 60)
+        {
             return true;
+        }
         return false;
     }
 
@@ -211,7 +220,9 @@ public class Bot : MonoBehaviour
         //if the target is within 10 units of the agent then consider it within range to
         //affect the agent's behaviour
         if (Vector3.Distance(this.transform.position, target.transform.position) < 10)
+        {
             return true;
+        }
         return false;
     }
 
@@ -233,7 +244,9 @@ public class Bot : MonoBehaviour
                 Invoke("BehaviourCoolDown", 5);             //continue hiding for 5 seconds
             }
             else
-                Pursue();   //otherwise pursue the target
+            {
+                Pursue();
+            }           //otherwise pursue the target
         }
     }
 }
