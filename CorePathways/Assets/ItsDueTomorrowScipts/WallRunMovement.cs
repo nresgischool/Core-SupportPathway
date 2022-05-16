@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WallRunMovement: MonoBehaviour
 {
@@ -75,6 +76,7 @@ public class WallRunMovement: MonoBehaviour
     private bool onWall;
     private bool cancelling;
 
+    private float health = 100;
     public static WallRunMovement Instance { get; private set; }
 
     void Awake()
@@ -104,6 +106,7 @@ public class WallRunMovement: MonoBehaviour
     {
         MyInput();
         Look();
+        gameEnd();
     }
 
     private void LateUpdate()
@@ -111,6 +114,19 @@ public class WallRunMovement: MonoBehaviour
         //call the wallrunning Function
         WallRunning();
         WallRunRotate();
+    }
+
+    public void takeDmg(float dmg)
+    {
+        health -= dmg;
+    }
+
+    private void gameEnd()
+    {
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     private void WallRunRotate()

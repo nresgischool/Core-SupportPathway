@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using SUPERCharacter;
 
-public class OwieOuchie : MonoBehaviour
+public class ParkourBot : MonoBehaviour
 {
     public Transform target;
     UnityEngine.AI.NavMeshAgent agent;
@@ -20,7 +21,7 @@ public class OwieOuchie : MonoBehaviour
     {
         //Wander();
         Seek(target.transform.position);
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -31,8 +32,7 @@ public class OwieOuchie : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Debug.Log("fiorhj");
-            //col.gameObject.GetComponent<SUPERCharacterAIO>().ImmediateStateChange(-50, StatSelector.Health);
-            col.gameObject.GetComponent<WallRunMovement>().takeDmg(25);
+            col.gameObject.GetComponent<SUPERCharacterAIO>().ImmediateStateChange(-50, StatSelector.Health);
         }
         if (col.gameObject.tag == "Projectile")
         {

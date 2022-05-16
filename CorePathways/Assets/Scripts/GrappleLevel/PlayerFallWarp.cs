@@ -13,18 +13,26 @@ public class PlayerFallWarp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y <= teleportFloorLevel)
+        if (player.transform.position.y <= teleportFloorLevel)
         {
-            player.transform.position = warpPoint.transform.position;
+            if (spawnNew == true)
+            {
+                player.transform.position = warpPoint2.transform.position;
+            }
+            else
+            {
+                player.transform.position = warpPoint.transform.position;
+            }
+
         }
     }
     // Detect collision with the SpawnTrigger tag to set a new spawnpoint
-    void OnControllerColliderHit(ControllerColliderHit hit)
+    void OnCollisionEnter(Collision hit)
     {
         if (hit.gameObject.tag == "SpawnTrigger")
         {
-            Debug.Log("nwe spawn");
+            Debug.Log("new spawn");
             spawnNew = true;
-        }    
+        }
     }
 }

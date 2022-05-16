@@ -16,7 +16,7 @@ public class ProjectileLauncher : MonoBehaviour
             // Instantiates the projectile infront of the player and launches it using the player set launchVelocity
             GameObject capsule = Instantiate(projectile, transform.position, transform.rotation);
             capsule.GetComponent<Rigidbody>().AddRelativeForce((new Vector3(0, 0, launchVelocity)));
-            //Destroy(capsule, lifeTime);
+            Destroy(capsule, lifeTime);
         }
     }
 }

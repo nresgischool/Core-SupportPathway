@@ -8,6 +8,9 @@ TagManager:
   - comCube
   - Projectile
   - Enemy
+  - DoorButton
+  - SpawnTrigger
+  - Hallway
   layers:
   - Default
   - TransparentFX
