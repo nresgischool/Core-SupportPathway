@@ -3,6 +3,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class WallRunMovement: MonoBehaviour
 {
@@ -76,6 +77,8 @@ public class WallRunMovement: MonoBehaviour
     private bool onWall;
     private bool cancelling;
 
+    [SerializeField] TextMeshProUGUI m_Object;
+
     private float health = 100;
     public static WallRunMovement Instance { get; private set; }
 
@@ -107,6 +110,7 @@ public class WallRunMovement: MonoBehaviour
         MyInput();
         Look();
         gameEnd();
+        m_Object.text = "Current Health: " + health;
     }
 
     private void LateUpdate()

@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using SUPERCharacter;
 
-public class Bot : MonoBehaviour
+public class AimTrainingBot : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject target;
@@ -25,6 +25,11 @@ public class Bot : MonoBehaviour
     void Seek(Vector3 location)
     {
         agent.SetDestination(location);
+    }
+
+    public float getHealth()
+    {
+        return health;
     }
 
     //send agent in the opposite direction to a location on the nav mesh
@@ -251,10 +256,11 @@ public class Bot : MonoBehaviour
             }           //otherwise pursue the target
         }
 
-        if(health < 0)
+        /*if(health <= 0)
         {
-            Destroy(this.gameObject);
-        }
+            Destroy(this);
+            Instantiate(prefab, new Vector3(Random.Range(minValue, maxValue), 1, Random.Range(minValue, maxValue)), Quaternion.identity);
+        }*/
     }
 
     void OnCollisionEnter(Collision col)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2956303306551781555}
   - component: {fileID: -700920312870223130}
   m_Layer: 0
-  m_Name: Object_0_0_0
+  m_Name: RigidbodyAmongUs
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,6 +11,7 @@ TagManager:
   - DoorButton
   - SpawnTrigger
   - Hallway
+  - ProjectileLauncherEnable
   layers:
   - Default
   - TransparentFX
