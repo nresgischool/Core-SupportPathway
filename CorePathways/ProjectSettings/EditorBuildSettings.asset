@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GrappleGunLevel.unity
-    guid: d8bd3034756c4614b8e8eb702632eddc
+    path: Assets/Scenes/Parkour.unity
+    guid: 7c31e223c7a52194fb8ba5a353bd413a
+  - enabled: 1
+    path: Assets/Scenes/AimTrainerInstructions.unity
+    guid: e27b74db671585f4fbc617440bd92f17
   - enabled: 1
     path: Assets/Scenes/AimTrainer.unity
     guid: 00824f6721e5f1f48a68f0b508ae0ebd
   - enabled: 1
-    path: Assets/Scenes/Parkour.unity
-    guid: 7c31e223c7a52194fb8ba5a353bd413a
+    path: Assets/Scenes/GrappleGunLevel.unity
+    guid: d8bd3034756c4614b8e8eb702632eddc
   - enabled: 1
     path: Assets/Scenes/OfficeEscape.unity
     guid: 9853a4162b63d444f82d91585e31a114

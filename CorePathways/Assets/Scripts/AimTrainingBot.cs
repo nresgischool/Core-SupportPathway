@@ -13,6 +13,10 @@ public class AimTrainingBot : MonoBehaviour
 
     public float health = 100;
 
+    public Color red;
+    public Color orange;
+    public Color yellow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -233,6 +237,26 @@ public class AimTrainingBot : MonoBehaviour
         return false;
     }
 
+    void ColourChanger()
+    {
+        if(health <= 25)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = red;
+        }
+        else if(health <= 50)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = orange;
+        }
+        else if (health <= 75)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = yellow;
+        }
+        else
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -255,6 +279,8 @@ public class AimTrainingBot : MonoBehaviour
                 Pursue();
             }           //otherwise pursue the target
         }
+
+        ColourChanger();
 
         /*if(health <= 0)
         {

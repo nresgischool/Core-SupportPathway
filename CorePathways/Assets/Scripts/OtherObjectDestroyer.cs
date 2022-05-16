@@ -11,7 +11,7 @@ public class OtherObjectDestroyer : MonoBehaviour
     {
         if(col.gameObject.tag == "Player")
         {
-            Debug.Log("Collision ");
+            Debug.Log("Destoryu");
             Destroy(destroy);
             //ChangeMyColor();
         }
